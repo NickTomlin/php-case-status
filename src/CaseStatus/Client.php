@@ -1,8 +1,8 @@
 <?php
 
-namespace CSSID;
+namespace CaseStatus;
 
-use \CSSID\ResponseParser;
+use \CaseStatus\ResponseParser;
 
 class Client
 {

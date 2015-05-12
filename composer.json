@@ -1,5 +1,5 @@
 {
-  "name": "ntomlin/cssid",
+  "name": "ntomlin/case-status",
   "description": "A module that enables easy fetching of ucis case status",
   "license": "MIT",
   "authors": [
@@ -13,7 +13,7 @@
   },
   "autoload": {
     "psr-0": {
-      "CSSID": "src/"
+      "CaseStatus": "src/"
     }
   }
 }

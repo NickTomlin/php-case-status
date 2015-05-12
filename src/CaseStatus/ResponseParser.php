@@ -1,5 +1,5 @@
 <?php
-namespace CSSID;
+namespace CaseStatus;
 
 class ResponseParser
 {

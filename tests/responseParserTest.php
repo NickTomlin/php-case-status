@@ -1,6 +1,6 @@
 <?php
 
-use CSSID\ResponseParser;
+use CaseStatus\ResponseParser;
 
 class ResponseParserTest extends PHPUnit_Framework_TestCase
 {
