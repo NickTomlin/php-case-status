@@ -1,0 +1,19 @@
+{
+  "name": "ntomlin/cssid",
+  "description": "A module that enables easy fetching of ucis case status",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nick Tomlin",
+      "email": "nick.tomlin@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "CSSID": "src/"
+    }
+  }
+}
