@@ -12,7 +12,7 @@ class ResponseParserTest extends PHPUnit_Framework_TestCase
 
     public function __construct ()
     {
-        $this->goodResponse = $this->readFixture('good-response.html');
+        $this->goodResponse = $this->readFixture('valid-response.html');
         $this->invalidResponse = $this->readFixture('invalid-response.html');
     }
 
