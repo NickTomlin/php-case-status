@@ -2,6 +2,9 @@
 
 use CaseStatus\Client;
 
+/**
+* @group integration
+*/
 class CaseStatusIntegrationTest extends PHPUnit_Framework_TestCase
 {
     public function testCorrectlyRequestsId()
