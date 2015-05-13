@@ -2,7 +2,7 @@
 
 use CaseStatus\Client;
 
-class ResponseParserTest extends PHPUnit_Framework_TestCase
+class CaseStatusIntegrationTest extends PHPUnit_Framework_TestCase
 {
     public function testCorrectlyRequestsId()
     {
