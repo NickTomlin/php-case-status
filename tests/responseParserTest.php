@@ -26,7 +26,7 @@ class ResponseParserTest extends PHPUnit_Framework_TestCase
     {
         $response = new ResponseParser($this->invalidResponse);
         $this->assertContains(
-            "<li>The application receipt number entered is invalid. Please check your receipt number and try again.</li>",
+            "The application receipt number entered is invalid. Please check your receipt number and try again.",
             $response->getText()
         );
 
