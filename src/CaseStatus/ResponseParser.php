@@ -5,6 +5,7 @@ namespace CaseStatus;
 class ResponseParser
 {
     private $responseText;
+    private $is_successful = false;
 
     public function __construct($html)
     {
@@ -13,6 +14,11 @@ class ResponseParser
 
     public function text () {
         return $this->responseText;
+    }
+
+    public function is_successful ()
+    {
+        return $this->is_successful;
     }
 
     private function parse ($html)
@@ -34,7 +40,9 @@ class ResponseParser
         if ($nodes->length) {
             $status_element = $nodes->item(0);
             $status_text = $status_element->textContent;
+            $this->is_successful = true;
         } else {
+            $this->is_successful = false;
             $error_element = $dom->getElementById('formErrorMessages');
             if ($error_element) {
                 $status_text = $error_element->textContent;
