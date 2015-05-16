@@ -1,16 +1,21 @@
 <?php
+
 namespace CaseStatus;
 
 class ResponseParser
 {
     private $responseText;
 
-    public function __construct($responseText)
+    public function __construct($html)
     {
-        $this->responseText = $responseText;
+        $this->parse($html);
     }
 
-    public function getText ()
+    public function text () {
+        return $this->responseText;
+    }
+
+    private function parse ($html)
     {
         $status_text = '';
         $status_classes = 'rows text-center';
@@ -18,7 +23,7 @@ class ResponseParser
 
         libxml_use_internal_errors(true);
         $dom = new \domDocument;
-        $dom->loadHTML($this->responseText);
+        $dom->loadHTML($html);
         $dom->preserveWhiteSpace = false;
         libxml_clear_errors();
         libxml_use_internal_errors($libxml_previous_state);
@@ -36,6 +41,6 @@ class ResponseParser
             }
         }
 
-        return $status_text;
+        $this->responseText = $status_text;
     }
 }

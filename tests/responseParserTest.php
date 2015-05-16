@@ -19,7 +19,7 @@ class ResponseParserTest extends PHPUnit_Framework_TestCase
     public function testContainsResponseText()
     {
         $response = new ResponseParser($this->goodResponse);
-        $this->assertContains('Card Was Delivered To Me By The Post Office', $response->getText());
+        $this->assertContains('Card Was Delivered To Me By The Post Office', $response->text());
     }
 
     public function testInvalidResponse()
@@ -27,7 +27,7 @@ class ResponseParserTest extends PHPUnit_Framework_TestCase
         $response = new ResponseParser($this->invalidResponse);
         $this->assertContains(
             "The application receipt number entered is invalid. Please check your receipt number and try again.",
-            $response->getText()
+            $response->text()
         );
 
     }
