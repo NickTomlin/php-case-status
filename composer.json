@@ -1,5 +1,5 @@
 {
-  "name": "NickTomlin/case-status",
+  "name": "nicktomlin/case-status",
   "description": "A module that enables easy fetching of ucis case status",
   "version": "1.0.0",
   "license": "MIT",
@@ -16,8 +16,8 @@
     "phpunit/phpunit": "4.6.*"
   },
   "autoload": {
-    "psr-0": {
-      "CaseStatus": "src/"
+    "psr-4": {
+      "CaseStatus\\": "src/"
     }
   }
 }

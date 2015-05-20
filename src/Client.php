@@ -2,7 +2,7 @@
 
 namespace CaseStatus;
 
-use \CaseStatus\ResponseParser;
+use CaseStatus\ResponseParser;
 
 class Client
 {
