@@ -1,7 +1,6 @@
 {
   "name": "nicktomlin/case-status",
   "description": "A module that enables easy fetching of ucis case status",
-  "version": "1.0.0",
   "license": "MIT",
   "authors": [
     {
