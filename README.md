@@ -3,6 +3,7 @@ Case Status
 ---
 
 [![Build Status](https://img.shields.io/travis/NickTomlin/php-case-status.svg?branch=master)](https://travis-ci.org/NickTomlin/php-case-status)
+[![Packagist](https://img.shields.io/packagist/v/nicktomlin/case-status.svg)](https://packagist.org/packages/nicktomlin/case-status)
 
 
 A PHP scraper to programatically check your [USCIS case status](https://egov.uscis.gov/casestatus/landing.do)
