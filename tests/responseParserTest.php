@@ -32,6 +32,18 @@ class ResponseParserTest extends PHPUnit_Framework_TestCase
 
     }
 
+    public function testValidResponseHTML()
+    {
+        $response = new ResponseParser($this->goodResponse);
+        $this->assertRegExp('#<h1>Card Was Delivered To Me By The Post Office</h1>#', $response->html());
+    }
+
+    public function testInvalidResponseHTML()
+    {
+        $response = new ResponseParser($this->invalidResponse);
+        $this->assertRegExp('#<li>The application receipt number entered is invalid. Please check your receipt number and try again.</li>#', $response->html());
+    }
+
     public function testIsSuccessfulWithValidResponse()
     {
         $response = new ResponseParser($this->goodResponse);
