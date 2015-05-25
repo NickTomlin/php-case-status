@@ -35,12 +35,12 @@ class ResponseParserTest extends PHPUnit_Framework_TestCase
     public function testIsSuccessfulWithValidResponse()
     {
         $response = new ResponseParser($this->goodResponse);
-        $this->assertTrue($response->is_successful());
+        $this->assertTrue($response->isSuccessful());
     }
 
     public function testIsSuccessfulWithInvalidResponse()
     {
         $response = new ResponseParser($this->invalidResponse);
-        $this->assertFalse($response->is_successful());
+        $this->assertFalse($response->isSuccessful());
     }
 }

@@ -1,7 +1,34 @@
 <?php
+/**
+ * CaseStatus\ResponseParser
+ *
+ * Parses the case status response from USCIS
+ *
+ * PHP version 5
+ *
+ * @category Utility
+ * @package  CaseStatus
+ * @author   Nick Tomlin <nick.tomlin+github@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @version  GIT: 1.0.0
+ * @link     https://github.com/nicktomlin/php-case-status
+ */
 
 namespace CaseStatus;
 
+/**
+ * CaseStatus\ResponseParser
+ *
+ * Expose the basic api for case status.
+ *
+ * PHP version 5
+ *
+ * @category Utility
+ * @package  CaseStatus
+ * @author   Nick Tomlin <nick.tomlin+github@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @link     https://github.com/nicktomlin/php-case-status
+ */
 class ResponseParser
 {
     private $responseText;
@@ -12,16 +39,17 @@ class ResponseParser
         $this->parse($html);
     }
 
-    public function text () {
+    public function text()
+    {
         return $this->responseText;
     }
 
-    public function is_successful ()
+    public function isSuccessful()
     {
         return $this->is_successful;
     }
 
-    private function parse ($html)
+    private function parse($html)
     {
         $status_text = '';
         $status_classes = 'rows text-center';
