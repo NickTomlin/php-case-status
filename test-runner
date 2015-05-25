@@ -1,5 +1,12 @@
 #!/usr/bin/env php
 <?php
 
-passthru('./vendor/bin/phpcs');
-passthru('./vendor/bin/phpunit');
+function run ($command) {
+  passthru('./vendor/bin/phpcs', $status);
+  if ($status !== 0) {
+    exit($status);
+  }
+}
+
+run('./vendor/bin/phpcs');
+run('./vendor/bin/phpunit');
