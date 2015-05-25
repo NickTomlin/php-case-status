@@ -1,7 +1,34 @@
 <?php
+/**
+ * CaseStatus\ResponseParser
+ *
+ * Parses the case status response from USCIS
+ *
+ * PHP version 5
+ *
+ * @category Utility
+ * @package  CaseStatus
+ * @author   Nick Tomlin <nick.tomlin+github@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @version  GIT: 1.0.0
+ * @link     https://github.com/nicktomlin/php-case-status
+ */
 
 namespace CaseStatus;
 
+/**
+ * CaseStatus\ResponseParser
+ *
+ * Expose the basic api for case status.
+ *
+ * PHP version 5
+ *
+ * @category Utility
+ * @package  CaseStatus
+ * @author   Nick Tomlin <nick.tomlin+github@gmail.com>
+ * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
+ * @link     https://github.com/nicktomlin/php-case-status
+ */
 class ResponseParser
 {
     private $responseText;
@@ -13,28 +40,29 @@ class ResponseParser
         $this->parse($html);
     }
 
-    public function text () {
+    public function text()
+    {
         return $this->responseText;
     }
 
-    public function html ()
+    public function html()
     {
         return $this->responseHtml;
     }
 
-    private function get_html ($element)
+    private function getHtml($element)
     {
         $dom = new \domDocument;
-        $dom->appendChild($dom->importNode($element,true));
+        $dom->appendChild($dom->importNode($element, true));
         return $dom->saveHTML();
     }
 
-    public function is_successful ()
+    public function isSuccessful()
     {
         return $this->is_successful;
     }
 
-    private function parse ($html)
+    private function parse($html)
     {
         $status_text = '';
         $status_html = '';
@@ -54,14 +82,14 @@ class ResponseParser
         if ($nodes->length) {
             $status_element = $nodes->item(0);
             $status_text = $status_element->textContent;
-            $status_html = $this->get_html($status_element);
+            $status_html = $this->getHtml($status_element);
             $this->is_successful = true;
         } else {
             $this->is_successful = false;
             $error_element = $dom->getElementById('formErrorMessages');
             if ($error_element) {
                 $status_text = $error_element->textContent;
-                $status_html = $this->get_html($error_element);
+                $status_html = $this->getHtml($error_element);
             }
         }
 
