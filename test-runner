@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+function run ($command) {
+  passthru('./vendor/bin/phpcs', $status);
+  if ($status !== 0) {
+    exit($status);
+  }
+}
+
+run('./vendor/bin/phpcs');
+run('./vendor/bin/phpunit');
