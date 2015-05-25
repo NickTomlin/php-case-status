@@ -18,19 +18,6 @@ namespace CaseStatus;
 
 use CaseStatus\ResponseParser;
 
-/**
- * CaseStatus\Client
- *
- * Expose the basic api for case status.
- *
- * PHP version 5
- *
- * @category Utility
- * @package  CaseStatus
- * @author   Nick Tomlin <nick.tomlin+github@gmail.com>
- * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
- * @link     https://github.com/nicktomlin/php-case-status
- */
 class Client
 {
     /**

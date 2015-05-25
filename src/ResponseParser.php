@@ -16,19 +16,6 @@
 
 namespace CaseStatus;
 
-/**
- * CaseStatus\ResponseParser
- *
- * Expose the basic api for case status.
- *
- * PHP version 5
- *
- * @category Utility
- * @package  CaseStatus
- * @author   Nick Tomlin <nick.tomlin+github@gmail.com>
- * @license  http://www.opensource.org/licenses/mit-license.html  MIT License
- * @link     https://github.com/nicktomlin/php-case-status
- */
 class ResponseParser
 {
     private $responseText;
@@ -50,6 +37,12 @@ class ResponseParser
         return $this->responseHtml;
     }
 
+   /**
+    * Return the "innerHTML" of a DOMElement
+    *
+    * @param DOMElement $element
+    * @return HTML string
+    */
     private function getHtml($element)
     {
         $dom = new \domDocument;
@@ -62,6 +55,20 @@ class ResponseParser
         return $this->is_successful;
     }
 
+   /**
+    * Parse a case status response. It is extremely brittle, due to the fact
+    * that it depends on classes existing in the incoming html.
+    *
+    * This checks for two cases:
+    * 1. A valid case status has been returned
+    * 2. An invalid case message was returned
+    *
+    * And sets responseHtml and responseText of the response instance
+    * accordingly. If no match is found a blank string is used.
+    *
+    * @param htmlstring $html Response body from USCIS
+    * @return null
+    */
     private function parse($html)
     {
         $status_text = '';
