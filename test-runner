@@ -1,0 +1,5 @@
+#!/usr/bin/env php
+<?php
+
+passthru('./vendor/bin/phpcs');
+passthru('./vendor/bin/phpunit');
